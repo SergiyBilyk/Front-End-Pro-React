@@ -1,16 +1,13 @@
-import {Button} from './components/Buttons/Button'
+import Counter from './components/Counter/Counter'
 import './App.css'
 
-// function App() {
-//   return(<h1>app</h1>)
-// }
-
 function App() {
-  return (<div>
-    <h2>Add and remove buttons</h2>
-    <Button name = 'Add'></Button>
-    <Button name = 'Remove'></Button>
-  </div>)
+
+  return (
+  <div>
+    <Counter></Counter>
+  </div>
+  )
 }
 
 export default App
