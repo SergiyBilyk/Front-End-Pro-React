@@ -26,3 +26,8 @@ a:hover {
     width: 100px;
     background-color: blueviolet;
 }
+footer {
+    background-color: rgb(82, 30, 131);
+    height: 50px;
+    width: 100%;
+}

@@ -1,28 +1,49 @@
-import {Routes, Route, NavLink} from 'react-router-dom';
-import Home from './components/pages/Home';
-import Contacts from './components/pages/Contacts';
-import AboutUs from './components/pages/AboutUs';
-import NotFound from './components/pages/NotFound';
-import './App.css'
+import { useDispatch, useSelector } from "react-redux";
+import { increment, decrement, reset } from "./redux/counterSlice";
+import { login, logout } from "./redux/authSlice";
+import "./App.css";
+import { useState } from "react";
 
 function App() {
+  const [number, setNumber] = useState(0);
+
+  const dispatch = useDispatch();
+
+  const { value } = useSelector((store) => store.counter);
+
+  const handleIncrement = () => {
+    dispatch(increment(number));
+  };
+
+  const handleDecrement = () => {
+    dispatch(decrement());
+  };
+
+  const handleReset = () => {
+    dispatch(reset());
+  };
+
+  const { isAuth } = useSelector((store) => store.auth);
 
   return (
-  <div className='container'>
-    <nav>
-      <NavLink to='/' className='nav'>Home</NavLink>
-      <NavLink to='/contacts' className='nav'>Contacts</NavLink>
-      <NavLink to='/aboutus' className='nav'>About Us</NavLink>
-    </nav>
-
-    <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path='/contacts' element={<Contacts />} />
-      <Route path='/aboutus' element={<AboutUs />} />
-      <Route path='*' element={<NotFound />} />
-    </Routes>
-  </div>
-  )
+    <div className="container">
+      {isAuth ? (
+        <button onClick={() => dispatch(logout())}>Logout</button>
+      ) : (
+        <button onClick={() => dispatch(login())}>Login</button>
+      )}
+      Hello
+      <input
+        type="text"
+        value={number}
+        onChange={(e) => setNumber(e.target.value)}
+      />
+      <div>Counter: {value}</div>
+      <button onClick={handleIncrement}>increment</button>
+      <button onClick={handleDecrement}>decrement</button>
+      <button onClick={handleReset}>reset</button>
+    </div>
+  );
 }
 
-export default App
+export default App;
