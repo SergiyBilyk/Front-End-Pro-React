@@ -1,6 +1,5 @@
 import Home from './pages/Home'
-import About from './pages/About'
-import Users from './pages/Users'
+import Cart from './pages/Cart'
 import { Route, Routes } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import "./App.css";
@@ -13,13 +12,11 @@ function App() {
     <div>
       <nav>
         <Link to='/'>Home</Link>
-        <Link to='/about'>About</Link>
-        <Link to='/users'>Users</Link>
+        <Link to='/cart'>Cart</Link>
       </nav>
       <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/users' element={<Users />} />
+          <Route path='/cart' element={<Cart />} />
       </Routes>
 
     </div>

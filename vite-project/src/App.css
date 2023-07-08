@@ -31,3 +31,13 @@ footer {
     height: 50px;
     width: 100%;
 }
+img {
+    width: 250px;
+}
+.home {
+    display: flex;
+}
+
+.home p {
+    align-self: center;
+}
