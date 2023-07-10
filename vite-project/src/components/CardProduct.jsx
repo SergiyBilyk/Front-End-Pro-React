@@ -17,7 +17,7 @@ const CardProduct = ({product}) => {
 
 
   return (
-    <div>CardProduct
+    <div>
          <img src={image} alr={name} />
         <p>{name}<span> {price}$</span></p>
         <div>
