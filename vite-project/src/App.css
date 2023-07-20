@@ -2,11 +2,10 @@
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
 }
-.container {
+.products {
     display: flex;
-    justify-content: center;
+
     align-items: center;
-    flex-direction: column;
 }
 nav {
     margin: 15px 0;
@@ -32,7 +31,7 @@ footer {
     width: 100%;
 }
 img {
-    width: 250px;
+    width: 200px;
     margin: 0 20px
 }
 .home {
@@ -44,4 +43,16 @@ img {
 }
 span {
     color: rgb(0, 88, 202);
+}
+.filter {
+    margin: 30px 0;
+}
+.btn-nav {
+    margin: 20px;
+}
+.btn-nav button{
+    margin: 10px;
+}
+.filter p{
+    text-align: left;
 }
