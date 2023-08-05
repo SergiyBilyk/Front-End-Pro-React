@@ -1,14 +1,13 @@
-import RandomNumber from "./components/RandomNumber";
-import "./App.css";
 import { useState, useEffect } from "react";
+import persons from "./data/persons"
+import Persons from "./components/Persons";
 import * as React from "react";
 
 function App() {
-
   return (
     <>
-      <RandomNumber maxNumber={9} />
+      <Persons/>
     </>
-  )
+  );
 }
 export default App;

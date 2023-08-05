@@ -5,7 +5,8 @@
 body {
     background-color: rgb(45, 70, 94);
     color: rgb(255, 255, 255);
-    font-size: 44px;
+    font-size: 22px;
+    text-align: center;
 }
 button {
     color: rgb(0, 0, 0);
@@ -15,4 +16,24 @@ button {
     margin: 20px;
     font-weight: 500;
     border: none;
+}
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.card {
+    margin: 20px;
+    width: 250px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.card > img {
+        border-radius: 10px;
+        width: 100%;
+}
+.card p {
+    font-size: 16px;
+    padding-bottom: 10px;
 }
