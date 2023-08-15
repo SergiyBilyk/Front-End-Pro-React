@@ -1,0 +1,10 @@
+.wrapper {
+    margin: 20px;
+}
+.block {
+    padding: 20px;
+    border: 2px solid rgb(0, 217, 255);
+    background-color: rgb(128, 110, 34);
+    width: 600px;
+    margin: 0 auto;
+}

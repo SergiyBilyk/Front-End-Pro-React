@@ -1,16 +1,13 @@
 import { useState, useEffect } from "react";
-import Login from "./components/Login";
+import Posts from "./components/Posts";
 import * as React from "react";
 
 function App() {
 
 
-
-
-  
   return (
     <>
-      <Login/>
+      <Posts />
     </>
   );
 }
