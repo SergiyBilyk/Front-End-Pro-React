@@ -1,0 +1,7 @@
+.blockRed {
+    padding: 20px;
+    border: 2px solid rgb(145, 146, 146);
+    background-color: rgb(0, 138, 131);
+    width: 600px;
+    margin: 0 auto;
+}
