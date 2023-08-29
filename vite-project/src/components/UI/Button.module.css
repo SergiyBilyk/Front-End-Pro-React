@@ -1,0 +1,15 @@
+.button {
+    margin: 10px;
+    padding: 8px 8px 6px;
+    background-color: rgb(207, 207, 172);
+    color: rgb(45, 70, 94);
+    border-radius: 5px;
+    cursor: pointer;
+}
+.button:hover {
+  background-color: rgb(212, 189, 154);
+}
+.button[disabled] {
+    color: #999;
+    background-color: #eee;
+}
