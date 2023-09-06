@@ -1,67 +1,29 @@
-import TodoForm from "./components/Todos/TodoForm";
-import TodoList from "./components/Todos/TodoList";
-import TodosAction from "./components/Todos/TodosAction";
-import { useState } from "react";
 import * as React from "react";
-import { v4 as uuidv4 } from "uuid";
+import { Routes, Route, BrowserRouter, Link } from "react-router-dom";
+import Home from './components/Home'
+import About from "./components/About";
+import Contacts from "./components/Contacts";
+import NotFound from "./components/NotFound";
+import Layout from "./components/Layout";
+import Courses from "./components/Courses";
+import SingleCours from "./components/SingleCours";
+
 
 function App() {
-  const [lists, setLists] = useState([]);
-
-  const handleAddList = (item) => {
-    const newTodo = {
-      text: item,
-      isComplited: false,
-      id: uuidv4(),
-    };
-    item && setLists([...lists, newTodo]);
-  };
-
-  const deleteTodoHandler = (index) => {
-    setLists(lists.filter((todo) => todo.id !== index));
-  };
-
-  const toggleTodoHandler = (id) => {
-    setLists(
-      lists.map((list) => {
-        return id === list.id
-          ? { ...list, isComplited: !list.isComplited }
-          : { ...list };
-      })
-    );
-  };
-
-  const resetTodoHandler = () => {
-    setLists([]);
-  };
-
-  const clearComplitedHandler = () => {
-    setLists(lists.filter((list) => !list.isComplited));
-  };
-  const complitedTodoCount = lists.filter((list) => list.isComplited).length;
 
   return (
-    <>
-      <h1>Todo App</h1>
-      <TodoForm addList={handleAddList} />
-      {lists.length > 0 && (
-        <TodosAction
-          resetTodo={resetTodoHandler}
-          clearComplited={clearComplitedHandler}
-          complitedTodoCount={!!complitedTodoCount}
-        />
-      )}
-      <TodoList
-        lists={lists}
-        deleteTodo={deleteTodoHandler}
-        toggleTodo={toggleTodoHandler}
-      />
-      {complitedTodoCount > 0 && (
-        <p>
-          You have complited {complitedTodoCount} {complitedTodoCount<2 ? 'todo' : 'todos'}
-        </p>
-      )}
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contacts" element={<Contacts />} />
+          <Route path="/Courses" element={<Courses />} />
+          <Route path="/Courses/:slug" element={<SingleCours />} />
+          <Route path="/*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 export default App;

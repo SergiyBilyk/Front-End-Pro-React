@@ -26,3 +26,7 @@ label {
 input {
     margin: 10px 15px;
 }
+a {
+    color: aquamarine;
+    padding: 10px;
+}
