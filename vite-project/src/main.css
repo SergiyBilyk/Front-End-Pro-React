@@ -4,29 +4,8 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(45, 70, 94);
+    background-color: #2a5b84;
     color: rgb(255, 255, 255);
     font-size: 22px;
     text-align: center;
-}
-button {
-    color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
-    font-size: 24px;
-    padding: 5px 20px;
-    margin: 20px;
-    font-weight: 500;
-    border: none;
-}
-
-
-label {
-    display: block;
-}
-input {
-    margin: 10px 15px;
-}
-a {
-    color: aquamarine;
-    padding: 10px;
 }

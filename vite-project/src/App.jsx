@@ -1,29 +1,49 @@
 import * as React from "react";
-import { Routes, Route, BrowserRouter, Link } from "react-router-dom";
-import Home from './components/Home'
-import About from "./components/About";
-import Contacts from "./components/Contacts";
-import NotFound from "./components/NotFound";
-import Layout from "./components/Layout";
-import Courses from "./components/Courses";
-import SingleCours from "./components/SingleCours";
+import Costs from "./components/Costs";
+import CostForm from "./components/NewCosts/CostForm";
+import { useState } from "react";
 
+const INITIAL_COSTS = [
+  {
+    date: new Date(2020, 8, 8),
+    name: "Black box",
+    amount: 238,
+    id: 1,
+  },
+  {
+    date: new Date(2020, 11, 11),
+    name: "Bike",
+    amount: 697.89,
+    id: 2,
+  },
+  {
+    date: new Date(2022, 4, 2),
+    name: "Laptop",
+    amount: 256.55,
+    id: 3,
+  },
+  {
+    date: new Date(2023, 7, 11),
+    name: "Phone",
+    amount: 986.46,
+    id: 4,
+  },
+];
 
 function App() {
+  const [costsData, setCostsData] = useState(INITIAL_COSTS);
+
+  const dataHandle = (costData) => {
+    setCostsData((prevState) => {
+      return [costData, ...prevState];
+    });
+  };
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contacts" element={<Contacts />} />
-          <Route path="/Courses" element={<Courses />} />
-          <Route path="/Courses/:slug" element={<SingleCours />} />
-          <Route path="/*" element={<NotFound />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <div className="wrap">
+      <CostForm dataHandle={dataHandle} />
+      <Costs costs={costsData} />
+    </div>
   );
 }
 export default App;
