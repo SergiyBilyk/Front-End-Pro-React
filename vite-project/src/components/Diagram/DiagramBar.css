@@ -18,7 +18,7 @@
 }
 
 .diagram-bar__fill {
-  background-color: #bd8025;
+  background-color: #2a5b84;
   width: 100%;
   transition: all 0.3s ease-out;
 }
@@ -27,4 +27,5 @@
   font-weight: bold;
   font-size: 0.5rem;
   text-align: center;
+  color: #313131;
 }
